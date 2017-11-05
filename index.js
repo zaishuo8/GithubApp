@@ -1,10 +1,7 @@
 import { AppRegistry } from 'react-native';
-// import { StackNavigator } from 'react-navigation';
-import App from './App';
-
-// const App = StackNavigator({
-//     Boy: {screen: Boy},
-//     Girl: {screen: Girl}
-// });
+// import App from './App';
+// import App from './TestComponent/react-navigation/StackNavigator';
+// import App from './TestComponent/react-navigation/TabNavigator';
+import App from './TestComponent/react-navigation/DrawerNavigator';
 
 AppRegistry.registerComponent('github', () => App);
