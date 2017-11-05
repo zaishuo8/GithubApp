@@ -8,7 +8,10 @@
 	},
 	"dependencies": {
 		"react": "16.0.0",
-		"react-native": "0.50.1"
+		"react-native": "0.50.1",
+		"react-native-deprecated-custom-components": "^0.1.1",
+		"react-native-tab-navigator": "^0.3.4",
+		"react-navigation": "^1.0.0-beta.19"
 	},
 	"devDependencies": {
 		"babel-jest": "21.2.0",
