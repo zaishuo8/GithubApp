@@ -31,7 +31,6 @@ const rootNavigator = StackNavigator({
             headerTitle: 'Details',
         }
     }
-
 });
 
 export default rootNavigator;
