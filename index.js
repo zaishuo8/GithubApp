@@ -6,6 +6,6 @@ import { AppRegistry } from 'react-native';
 // import App from './TestComponent/react-navigation/SimpleApp';
 // import App from './TestComponent/react-navigation/NestNavigate';
 // import App from './TestComponent/ListView/app';
-import setup from './js/pages/setup';
+import App from './js/pages/setup';
 
-AppRegistry.registerComponent('github', () => setup);
+AppRegistry.registerComponent('github', () => App);

@@ -1,25 +1,8 @@
 import React, { Component } from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
 import { TabNavigator } from 'react-navigation';
+import PopularPage from "./PopularPage";
 
-class Popular extends Component{
-    static navigationOptions = {
-        tabBarLabel: 'Popular',
-        tabBarIcon: ({ tintColor }) => (
-            <Image
-                source={require('../../res/images/ic_polular.png')}
-                style={[styles.icon, {tintColor: tintColor}]}
-            />
-        )
-    };
-    render(){
-        return(
-            <View style={{flex:1, justifyContent:'center', alignItems: 'center'}}>
-                <Text style={{fontSize: 20}}>Popular</Text>
-            </View>
-        );
-    }
-}
 class Trending extends Component{
     static navigationOptions = {
         tabBarLabel: 'Trending',
@@ -77,7 +60,7 @@ class Profile extends Component{
 
 const HomePage = TabNavigator({
     Popular: {
-        screen: Popular
+        screen: PopularPage
     },
     Trending: {
         screen: Trending
@@ -90,7 +73,7 @@ const HomePage = TabNavigator({
     }
 }, {
     tabBarOptions: {
-        activeTintColor: '#e91e63',
+        activeTintColor: '#6495ED',
     }
 });
 
