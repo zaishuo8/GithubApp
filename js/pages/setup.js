@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { StackNavigator } from 'react-navigation';
 import WelcomePage from "./WelcomePage";
 import HomePage from "./HomePage";
+import CustomKeyPage from "./CustomKeyPage";
+import AsyncStorageUtils from "../utils/AsyncStorageUtils";
+import defaultKeys from '../../res/data/key.json';
+import SortKeysPage from "./SortKeysPage";
 
 function setup() {
     // 进行一些初始化配置
@@ -11,13 +15,22 @@ function setup() {
         },*/
         HomePage: {
             screen: HomePage,
-            navigationOptions: ({navigation}) => ({
-                title: 'Popular',
+            navigationOptions: {
+                title: 'Home',
                 headerLeft: null,
-                headerStyle: { backgroundColor: '#6495ED' }
-            })
-        }
+                headerStyle: { backgroundColor: '#6495ED' },
+                headerTitleStyle: { color: 'white' },
+            }
+        },
+        CustomKeyPage: { screen: CustomKeyPage },
+        SortKeysPage: { screen: SortKeysPage }
     });
+
+    // 初始化默认 keys
+    AsyncStorageUtils.get('keys')
+        .then((value) => {
+            if (!value) AsyncStorageUtils.save('keys', defaultKeys);
+        });
 
     return <Root/>
 }

@@ -2,25 +2,9 @@ import React, { Component } from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
 import { TabNavigator } from 'react-navigation';
 import PopularPage from "./PopularPage";
+import TrendingPage from "./TrendingPage";
+import MyProfile from "./MyProfile";
 
-class Trending extends Component{
-    static navigationOptions = {
-        tabBarLabel: 'Trending',
-        tabBarIcon: ({ tintColor }) => (
-            <Image
-                source={require('../../res/images/ic_trending.png')}
-                style={[styles.icon, {tintColor: tintColor}]}
-            />
-        )
-    };
-    render(){
-        return(
-            <View style={{flex:1, justifyContent:'center', alignItems: 'center'}}>
-                <Text style={{fontSize: 20}}>Trending</Text>
-            </View>
-        );
-    }
-}
 class Favorite extends Component{
     static navigationOptions = {
         tabBarLabel: 'Favorite',
@@ -39,37 +23,19 @@ class Favorite extends Component{
         );
     }
 }
-class Profile extends Component{
-    static navigationOptions = {
-        tabBarLabel: 'Profile',
-        tabBarIcon: ({ tintColor }) => (
-            <Image
-                source={require('../../res/images/ic_my.png')}
-                style={[styles.icon, {tintColor: tintColor}]}
-            />
-        )
-    };
-    render(){
-        return(
-            <View style={{flex:1, justifyContent:'center', alignItems: 'center'}}>
-                <Text style={{fontSize: 20}}>Profile</Text>
-            </View>
-        );
-    }
-}
 
 const HomePage = TabNavigator({
     Popular: {
         screen: PopularPage
     },
     Trending: {
-        screen: Trending
+        screen: TrendingPage
     },
     Favorite: {
         screen: Favorite
     },
     Profile: {
-        screen: Profile
+        screen: MyProfile
     }
 }, {
     tabBarOptions: {
