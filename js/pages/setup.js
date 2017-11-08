@@ -6,6 +6,7 @@ import CustomKeyPage from "./CustomKeyPage";
 import AsyncStorageUtils from "../utils/AsyncStorageUtils";
 import defaultKeys from '../../res/data/key.json';
 import SortKeysPage from "./SortKeysPage";
+import DetailPage from "./DetailPage";
 
 function setup() {
     // 进行一些初始化配置
@@ -23,7 +24,8 @@ function setup() {
             }
         },
         CustomKeyPage: { screen: CustomKeyPage },
-        SortKeysPage: { screen: SortKeysPage }
+        SortKeysPage: { screen: SortKeysPage },
+        DetailPage: { screen: DetailPage },
     });
 
     // 初始化默认 keys

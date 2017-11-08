@@ -5,7 +5,7 @@ export default class RepositoryCell extends Component{
     render(){
         let item = this.props.item;
         return(
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => this.props.handlePress(item.svn_url)}>
                 <View style={styles.cell_container}>
                     <Text style={styles.title}>{item.full_name}</Text>
                     <Text style={styles.description}>{item.description}</Text>

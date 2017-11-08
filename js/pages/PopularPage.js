@@ -21,6 +21,9 @@ export default class PopularPage extends Component{
             subscribe: []
         }
     }
+    navigateToDetail(url){
+        this.props.navigation.navigate('DetailPage', {url: url});
+    }
     render(){
         return(
             <View style={styles.container}>
@@ -34,13 +37,15 @@ export default class PopularPage extends Component{
                             tabBarUnderlineStyle={{backgroundColor: '#e7e7e7', height: 2}}
                         >
                             {this.state.subscribe.map((item, index) => {
-                                return item.checked ? <PopularTab key={index} tabLabel={item.name}/> : null
+                                return item.checked ?
+                                    <PopularTab key={index} tabLabel={item.name} navigateFun={this.navigateToDetail.bind(this)}/>
+                                    :
+                                    null
                             })}
                         </ScrollableTabView>
                         :
                         null
                 }
-
             </View>
         )
     }
@@ -70,7 +75,7 @@ class PopularTab extends Component{
             .catch(err => this.setState({result: JSON.stringify(err)}))
     }
     renderRow(item){
-        return <RepositoryCell item={item}/>
+        return <RepositoryCell item={item} handlePress={this.props.navigateFun}/>
     }
     render(){
         return(
