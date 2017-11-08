@@ -1,2 +1,4 @@
 stacknavigator 的 goback 动作的监听截断？   Alert ？
 stacknavigator 的 left 自定义后，如何调取后退方法？  navigation.goBack()
+
+style={[]}   style 可以是数组的意义和用法，（样式主题？）
