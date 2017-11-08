@@ -4,25 +4,7 @@ import { TabNavigator } from 'react-navigation';
 import PopularPage from "./PopularPage";
 import TrendingPage from "./TrendingPage";
 import MyProfile from "./MyProfile";
-
-class Favorite extends Component{
-    static navigationOptions = {
-        tabBarLabel: 'Favorite',
-        tabBarIcon: ({ tintColor }) => (
-            <Image
-                source={require('../../res/images/ic_favorite.png')}
-                style={[styles.icon, {tintColor: tintColor}]}
-            />
-        )
-    };
-    render(){
-        return(
-            <View style={{flex:1, justifyContent:'center', alignItems: 'center'}}>
-                <Text style={{fontSize: 20}}>Favorite</Text>
-            </View>
-        );
-    }
-}
+import FavouritePage from "./FavouritePage";
 
 const HomePage = TabNavigator({
     Popular: {
@@ -32,7 +14,7 @@ const HomePage = TabNavigator({
         screen: TrendingPage
     },
     Favorite: {
-        screen: Favorite
+        screen: FavouritePage
     },
     Profile: {
         screen: MyProfile

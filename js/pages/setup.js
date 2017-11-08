@@ -34,6 +34,14 @@ function setup() {
             if (!value) AsyncStorageUtils.save('keys', JSON.stringify(defaultKeys));
         });
 
+    // 初始化默认 favourite
+    AsyncStorageUtils.get('favourite')
+        .then((value) => {
+            if (!value) AsyncStorageUtils.save('favourite', JSON.stringify([]));
+        });
+
+    // AsyncStorageUtils.save('favourite', JSON.stringify([]));
+
     return <Root/>
 }
 
