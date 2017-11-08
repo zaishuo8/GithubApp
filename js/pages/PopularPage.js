@@ -24,17 +24,23 @@ export default class PopularPage extends Component{
     render(){
         return(
             <View style={styles.container}>
-                <ScrollableTabView
-                    renderTabBar={()=><ScrollableTabBar/>}
-                    tabBarBackgroundColor='#6495ED'
-                    tabBarInactiveTextColor='mintcream'
-                    tabBarActiveTextColor='white'
-                    tabBarUnderlineStyle={{backgroundColor: '#e7e7e7', height: 2}}
-                >
-                    {this.state.subscribe.map((item, index) => {
-                        return item.checked ? <PopularTab key={index} tabLabel={item.name}/> : null
-                    })}
-                </ScrollableTabView>
+                {
+                    this.state.subscribe.length ?
+                        <ScrollableTabView
+                            renderTabBar={()=><ScrollableTabBar/>}
+                            tabBarBackgroundColor='#6495ED'
+                            tabBarInactiveTextColor='mintcream'
+                            tabBarActiveTextColor='white'
+                            tabBarUnderlineStyle={{backgroundColor: '#e7e7e7', height: 2}}
+                        >
+                            {this.state.subscribe.map((item, index) => {
+                                return item.checked ? <PopularTab key={index} tabLabel={item.name}/> : null
+                            })}
+                        </ScrollableTabView>
+                        :
+                        null
+                }
+
             </View>
         )
     }

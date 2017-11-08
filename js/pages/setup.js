@@ -29,7 +29,7 @@ function setup() {
     // 初始化默认 keys
     AsyncStorageUtils.get('keys')
         .then((value) => {
-            if (!value) AsyncStorageUtils.save('keys', defaultKeys);
+            if (!value) AsyncStorageUtils.save('keys', JSON.stringify(defaultKeys));
         });
 
     return <Root/>
